@@ -11,10 +11,6 @@
     <title>Modal</title>
 </head>
 <body>
-
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Agregar Películas</button>
-
-
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -25,7 +21,7 @@
       </div>
 
       <div class="modal-body">
-        <form>
+        <form id="formCRUDMovie">
           <div class="mb-3">
             <label for="codMovie" class="col-form-label">Código</label>
             <input type="text" class="form-control" id="codMovie">
@@ -33,7 +29,7 @@
 
           <div class="mb-3">
             <label for="nameMovie" class="col-form-label">Nombre</label>
-            <input type="text" class="form-control" id="tittleMovie">
+            <input type="text" class="form-control" id="titleMovie">
           </div>
 
           <div class="mb-3">
@@ -41,7 +37,7 @@
             <textarea class="form-control" id="descriptionMovie"></textarea>
           </div>
 
-          <select class="form-select form-select-sm"  aria-label="Default select example">
+          <select id="categoryOptions" class="form-select form-select-sm"  aria-label="Default select example">
             <option selected>Seleccione categoría</option>
             <option value="accion">Acción</option>
             <option value="terror">Terror</option>
@@ -61,13 +57,15 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button class="btn btn-primary" onclick="addMovie()">Guardar Película</button>
+        <button class="btn btn-primary" onclick="addMovie()" data-bs-dismiss="modal">Guardar Película</button>
       </div>
     </div>
   </div>
 </div>
 
 <div class="container mt-5">
+<h2>Peliculas</h2>
+<button type="button" class="mb-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Agregar Películas</button>
 <table class="table">
   <thead class="thead-dark">
     <tr class="table-primary text-center">
